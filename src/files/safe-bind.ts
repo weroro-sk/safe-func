@@ -1,12 +1,9 @@
 interface SafeBind {
-    <T extends ((...argArray: Parameters<T>) => ReturnType<T>)>
-    (fn: T): T;
+    <T extends ((...argArray: Parameters<T>) => ReturnType<T>)>(fn: T): T;
 
-    <T extends ((...argArray: Parameters<T>) => ReturnType<T>), U>
-    (fn: T, thisArg: object): T;
+    <T extends ((...argArray: Parameters<T>) => ReturnType<T>)>(fn: T, thisArg: object): T;
 
-    <T extends ((...argArray: Parameters<T>) => ReturnType<T>)>
-    (fn: T, thisArg?: object | null, ...argArray: Parameters<T>): () => ReturnType<T>;
+    <T extends ((...argArray: Parameters<T>) => ReturnType<T>)>(fn: T, thisArg: object | null, ...argArray: Parameters<T>): () => ReturnType<T>;
 }
 
 /**
