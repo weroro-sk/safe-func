@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": [
+    "../src/**/*.ts",
+    "../test/**/*.ts"
+  ],
+  "compilerOptions": {
+    "rootDirs": [
+      "../src",
+      "../test"
+    ],
+    "outDir": "../lib-test"
+  }
+}

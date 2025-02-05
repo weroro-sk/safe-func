@@ -1,0 +1,63 @@
+{
+  "private": true,
+  "name": "safe-func",
+  "description": "A collection of type-safe utility functions for binding, applying, calling, and executing functions in JavaScript.",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "scripts": {
+    "build": "npm run del:build && tsc -p .tsconfig/tsconfig.dist.json || npm run del:build",
+    "build:test": "npm run del:test && tsc -p .tsconfig/tsconfig.test.json || npm run del:test",
+    ":": ":",
+    "test": "npm run build:test && mocha && npm run del:test || npm run del:test",
+    "test:single": "npm run build:test && mocha -g",
+    "::": ":",
+    "pack:dry": "npm run build && npm pack --dry-run && npm run del:build || npm run del:build",
+    "posttest:single": "npm run del:test",
+    "del:test": "rimraf lib-test",
+    "del:build": "rimraf lib"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "utility",
+    "functions",
+    "type-safe",
+    "bind",
+    "apply",
+    "call",
+    "execute",
+    "JavaScript"
+  ],
+  "author": {
+    "name": "Dárius Bokor [weroro]"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weroro-sk/safe-func.git"
+  },
+  "bugs": {
+    "url": "https://github.com/weroro-sk/safe-func/issues"
+  },
+  "homepage": "https://github.com/weroro-sk/safe-func#readme",
+  "license": "MIT",
+  "sideEffects": false,
+  "devDependencies": {
+    "@types/chai": "^5.0.1",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.10.7",
+    "chai": "^5.1.2",
+    "mocha": "^11.0.1",
+    "rimraf": "^6.0.1",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.3"
+  }
+}

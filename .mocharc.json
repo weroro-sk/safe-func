@@ -1,0 +1,7 @@
+{
+  "extension": [
+    "js"
+  ],
+  "spec": "lib-test/**/*.spec.js",
+  "recursive": true
+}
