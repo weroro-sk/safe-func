@@ -22,6 +22,15 @@ describe('safeBind', () => {
         expect(boundAdd()).to.equal(3);
     });
 
+    it('should not pass bind arguments correctly', () => {
+        const add = function (a: number, b: number) {
+            return a + b;
+        };
+        const boundAdd = safeBind(add, {});
+        // @ts-ignore
+        expect(Number.isNaN(boundAdd())).to.equal(Number.isNaN(NaN));
+    });
+
     it('should handle type errors gracefully', () => {
         const invalidFn = 'not a function'; // Invalid type
         expect(safeBind(invalidFn as any, null)).to.be.a('function');

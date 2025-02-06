@@ -20,6 +20,15 @@ describe('safeCall', () => {
         expect(safeCall(add, obj, 1, 2)).to.equal(45);
     });
 
+    it('should call a function without arguments', () => {
+        const obj = {value: 42};
+        const add = function (this: any, a: number, b: number) {
+            return this.value + a + b;
+        };
+        // @ts-ignore
+        expect(Number.isNaN(safeCall(add, obj))).to.equal(Number.isNaN(NaN));
+    });
+
     it('should handle type errors gracefully', () => {
         const invalidFn = 'not a function'; // Invalid type
         expect(safeCall(invalidFn as any, null)).to.be.undefined;

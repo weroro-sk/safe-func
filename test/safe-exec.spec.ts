@@ -4,6 +4,13 @@ import {expect} from 'chai';
 import {safeExec} from '../src/index.js';
 
 describe('safeExec', () => {
+    it('should execute a function and return the correct value', () => {
+        const add = function () {
+            return 42;
+        };
+        expect(safeExec(add)).to.equal(42);
+    });
+
     it('should execute a function with the provided arguments and return the correct value', () => {
         const add = function (a: number, b: number) {
             return a + b;
@@ -11,9 +18,12 @@ describe('safeExec', () => {
         expect(safeExec(add, 1, 2)).to.equal(3);
     });
 
-    it('should return undefined if the function is invalid', () => {
-        const invalidFn = "null"; // Invalid function
-        expect(safeExec(invalidFn as any)).to.be.undefined;
+    it('should execute a function without the provided arguments and return the incorrect value', () => {
+        const add = function (a: number, b: number) {
+            return a + b;
+        };
+        // @ts-ignore
+        expect(Number.isNaN(safeExec(add))).to.be.equal(Number.isNaN(NaN));
     });
 
     it('should handle type errors gracefully', () => {
