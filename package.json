@@ -2,7 +2,7 @@
   "private": true,
   "name": "safe-func",
   "description": "A collection of type-safe utility functions for binding, applying, calling, and executing functions in JavaScript.",
-  "version": "0.0.1",
+  "version": "0.4.9",
   "type": "module",
   "main": "lib/index.js",
   "module": "lib/index.js",
@@ -25,7 +25,7 @@
     "del:build": "rimraf lib"
   },
   "files": [
-    "dist",
+    "lib",
     "README.md",
     "LICENSE"
   ],
