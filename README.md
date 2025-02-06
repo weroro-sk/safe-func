@@ -21,7 +21,7 @@ npm install safe-func
 
 ## Contents
 
-- [Why this library?](docs/motivation)
+- [Why does this library exist?](docs/motivation.md)
 - [Synopsis](#synopsis)
 - [Testing](#testing)
 
@@ -169,7 +169,8 @@ If the application fails, it returns undefined.
 - **args** [`...any[]`] - _[optional]_ The arguments to pass to the function.
 
 > Build-in
-> JS [`Function.prototype.apply()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
+>
+JS [`Function.prototype.apply()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
 > needs an array-like object, specifying the arguments with which func should be called
 >
 > In `safeApply` you need to
