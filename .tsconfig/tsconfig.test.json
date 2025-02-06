@@ -9,6 +9,9 @@
       "../src",
       "../test"
     ],
-    "outDir": "../lib-test"
+    "outDir": "../lib-test",
+    "declaration": false,
+    "sourceMap": false,
+    "removeComments": true
   }
 }
