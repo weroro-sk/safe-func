@@ -3,13 +3,25 @@
 A collection of type-safe utility functions for **binding**, **applying**, **calling**, and **executing** functions in
 JavaScript.
 
-These functions ensure safe handling of context and arguments, providing fallback mechanisms for error handling and
-enhancing code reliability.
+The **Safe Func** library provides a robust set of type-safe utility functions designed to enhance the reliability of
+function handling in JavaScript and TypeScript. By offering safe variants of common function operations—such as
+execution, binding, calling, and applying—this library ensures that developers can manage context and arguments
+effectively while minimizing the risk of errors. With fallback mechanisms in place, these utilities return sensible
+defaults in case of failures, thereby promoting safer coding practices. The library is easy to install and integrate
+into existing projects, making it a valuable tool for any JavaScript/TypeScript developer looking to improve code safety
+and maintainability.
+
+## Installation
 
 ```shell
 npm install safe-func
 ```
 
+---
+
+## Contents
+
+- [Why this library?](docs/PROBLEMS.md)
 - [Synopsis](#synopsis)
 - [Testing](#testing)
 
@@ -17,10 +29,10 @@ npm install safe-func
 
 ## Synopsis
 
-- [safeExec](#safeexec)
-- [safeBind](#safebind)
-- [safeCall](#safecall)
-- [safeApply](#safeapply)
+- [safeExec](#safeexec) : safe variant of directly invoking a `function`
+- [safeBind](#safebind) : safe variant of the native `Function.prototype.bind`
+- [safeCall](#safecall) : safe variant of the native `Function.prototype.call`
+- [safeApply](#safeapply) : safe variant of the native `Function.prototype.apply`
 
 ---
 
@@ -52,7 +64,7 @@ safeExec(greet); // Outputs: "Hello"
 ```
 
 ```typescript
-const add = function (a, b) {
+const add = function (a: number, b: number) {
     return a + b;
 };
 console.log(safeExec(add, 1, 2)); // Outputs: 3
@@ -93,7 +105,7 @@ console.log(boundGetValue()); // Outputs: 42
 
 ```typescript
 const obj = {value: 42};
-const getBool = function (this: any, arg1, arg2, arg3) {
+const getBool = function (this: any, arg1: number, arg2: number, arg3: number) {
     return this.value === (arg1 + arg2 + arg3);
 };
 const boundGetBool = safeBind(getValue, obj, 12, 21, 19);
@@ -133,7 +145,7 @@ console.log(safeCall(getValue, obj)); // Outputs: 42
 
 ```typescript
 const obj = {value: 42};
-const getValue = function (this: any, arg1, arg2, arg3) {
+const getValue = function (this: any, arg1: number, arg2: number, arg3: number) {
     return this.value === (arg1 + arg2 + arg3);
 };
 console.log(safeApply(getValue, obj, 12, 21, 19)); // Outputs: true 
@@ -172,7 +184,7 @@ console.log(safeApply(getValue, obj)); // Outputs: 42
 
 ```typescript 
 const obj = {value: 42};
-const getValue = function (this: any, arg1, arg2, arg3) {
+const getValue = function (this: any, arg1: number, arg2: number, arg3: number) {
     return this.value === (arg1 + arg2 + arg3);
 };
 console.log(safeApply(getValue, obj, [12, 21, 19])); // Outputs: true
@@ -182,7 +194,7 @@ console.log(safeApply(getValue, obj, [12, 21, 19])); // Outputs: true
 
 ## Testing
 
-Run all tests
+### Run all tests
 
 ```shell
 npm run test
@@ -190,7 +202,7 @@ npm run test
 
 ---
 
-Run single test
+### Run single test
 
 **NPM**
 
@@ -210,7 +222,7 @@ pnpm run test:single "testCaseName"
 
 ---
 
-Run all tests in minimal mode (no report)
+### Run all tests in minimal mode (no report)
 
 ```shell
 npm run test:min
@@ -218,7 +230,7 @@ npm run test:min
 
 ---
 
-[Nyan cat](https://www.nyan.cat/index.php?cat=original) test 😻
+### [Nyan cat](https://www.nyan.cat/index.php?cat=original) test 😻
 
 ```shell
 npm run test:nyan
