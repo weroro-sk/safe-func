@@ -9,7 +9,7 @@ import {safeBind} from "./safe-bind.js";
  * @template T - The type of the function to be applied.
  * @param {T} fn - The function to apply.
  * @param {object|null} thisArg - The context to apply the function to.
- * @param {Parameters<T>} [argArray=[]] - The arguments array to pass to the function.
+ * @param {...Parameters<T>} [argArray=[]] - The arguments array to pass to the function.
  * @returns {ReturnType<T>} - The result of the function application.
  *
  * @example
