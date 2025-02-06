@@ -8,7 +8,7 @@ import {safeBind} from "./safe-bind.js";
  *
  * @template T - The type of the function to be executed.
  * @param {T} fn - The function to execute.
- * @param {...Parameters<T>} argArray - The arguments to pass to the function.
+ * @param {...Parameters<T>} [args] - The arguments to pass to the function.
  * @returns {ReturnType<T>} - The result of the function execution.
  *
  * @example
@@ -19,9 +19,9 @@ import {safeBind} from "./safe-bind.js";
  * const add = function(a, b) { return a + b; };
  * console.log(safeExec(add, 1, 2)); // Outputs: 3
  */
-export const safeExec = <T extends ((...argArray: Parameters<T>) => ReturnType<T>)>(
+export const safeExec = <T extends ((...args: Parameters<T>) => ReturnType<T>)>(
     fn: T,
-    ...argArray: Parameters<T>
+    ...args: Parameters<T>
 ): ReturnType<T> =>
     // Use safeBind to bind the function with null context and then immediately invoke it.
-    (safeBind(fn, null, ...argArray) as Function)();
+    (safeBind(fn, null, ...args) as Function)();
