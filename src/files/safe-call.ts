@@ -22,7 +22,7 @@ import {safeBind} from "./safe-bind.js";
  * const getValue = function(arg1, arg2, arg3) { return this.value === (arg1 + arg2 + arg3); };
  * console.log(safeApply(getValue, obj, 12, 21, 19)); // Outputs: true
  */
-export const safeCall = <T extends ((...args: Parameters<T>) => ReturnType<T>)>(
+export const safeCall = <T extends ((this: T, ...args: Parameters<T>) => ReturnType<T>)>(
     fn: T,
     thisArg: object | null,
     ...args: Parameters<T>

@@ -19,7 +19,7 @@ import {safeBind} from "./safe-bind.js";
  * const add = function(a, b) { return a + b; };
  * console.log(safeExec(add, 1, 2)); // Outputs: 3
  */
-export const safeExec = <T extends ((...args: Parameters<T>) => ReturnType<T>)>(
+export const safeExec = <T extends ((this: T, ...args: Parameters<T>) => ReturnType<T>)>(
     fn: T,
     ...args: Parameters<T>
 ): ReturnType<T> =>

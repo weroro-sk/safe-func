@@ -68,7 +68,7 @@ interface SafeBind {
  * const boundGetBool = safeBind(getValue, obj, 12, 21, 19);
  * console.log(boundGetBool()); // Outputs: true
  */
-export const safeBind: SafeBind = <T extends ((...args: Parameters<T>) => ReturnType<T>)>(
+export const safeBind: SafeBind = <T extends ((this: T, ...args: Parameters<T>) => ReturnType<T>)>(
     fn: T,
     thisArg?: object | null,
     ...args: Parameters<T>
