@@ -24,7 +24,7 @@ import {safeBind} from "./safe-bind.js";
  */
 export const safeCall = <T extends ((...argArray: Parameters<T>) => ReturnType<T>)>(
     fn: T,
-    thisArg?: object | null,
+    thisArg: object | null,
     ...argArray: Parameters<T>
 ): ReturnType<T> =>
     // Use safeBind to bind the function and then immediately invoke it.

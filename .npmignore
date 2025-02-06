@@ -1,7 +1,9 @@
 .idea/
 .git/
+.tsconfig/
 node_modules/
 src/
 package-json.lock
+pnpm-lock.yaml
 .npmrc
 webpack.config.js

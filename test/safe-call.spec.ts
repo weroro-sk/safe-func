@@ -19,8 +19,8 @@ describe('safeCall', () => {
         expect(safeCall(add, null, 1, 2)).to.equal(3);
     });
 
-    it('should return undefined if the function is invalid', () => {
-        const invalidFn = "null"; // Invalid function
-        expect(safeCall(invalidFn as any)).to.be.undefined;
+    it('should handle type errors gracefully', () => {
+        const invalidFn = 'not a function'; // Invalid type
+        expect(safeCall(invalidFn as any, null)).to.be.undefined;
     });
 });

@@ -15,4 +15,9 @@ describe('safeExec', () => {
         const invalidFn = "null"; // Invalid function
         expect(safeExec(invalidFn as any)).to.be.undefined;
     });
+
+    it('should handle type errors gracefully', () => {
+        const invalidFn = 'not a function'; // Invalid type
+        expect(safeExec(invalidFn as any)).to.be.undefined;
+    });
 });

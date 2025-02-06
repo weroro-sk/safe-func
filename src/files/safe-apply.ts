@@ -8,7 +8,7 @@ import {safeBind} from "./safe-bind.js";
  *
  * @template T - The type of the function to be applied.
  * @param {T} fn - The function to apply.
- * @param {object|null} [thisArg=null] - The context to apply the function to.
+ * @param {object|null} thisArg - The context to apply the function to.
  * @param {Parameters<T>} [argArray=[]] - The arguments array to pass to the function.
  * @returns {ReturnType<T>} - The result of the function application.
  *
@@ -24,7 +24,7 @@ import {safeBind} from "./safe-bind.js";
  */
 export const safeApply = <T extends ((...argArray: Parameters<T>) => ReturnType<T>)>(
     fn: T,
-    thisArg?: object | null,
+    thisArg: object | null,
     argArray?: Parameters<T>
 ): ReturnType<T> =>
     // Use safeBind to bind the function and then immediately invoke it.
