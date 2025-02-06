@@ -70,7 +70,7 @@ interface SafeBind {
  */
 export const safeBind: SafeBind = <T extends ((...args: Parameters<T>) => ReturnType<T>)>(
     fn: T,
-    thisArg: object | null,
+    thisArg?: object | null,
     ...args: Parameters<T>
 ): T => {
     try {

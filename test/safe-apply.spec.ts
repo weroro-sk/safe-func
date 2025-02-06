@@ -16,13 +16,14 @@ describe('safeApply', () => {
         const add = function (a: number, b: number) {
             return a + b;
         };
-        expect(safeApply(add, null, [1, 2])).to.equal(3);
+        expect(safeApply(add, null, ...[1, 2])).to.equal(3);
     });
 
     it('should apply a function without arguments', () => {
         const add = function (a: number, b: number) {
             return a + b;
         };
+        // @ts-ignore
         expect(Number.isNaN(safeApply(add, null))).to.equal(Number.isNaN(NaN));
     });
 

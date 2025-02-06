@@ -20,12 +20,12 @@ import {safeBind} from "./safe-bind.js";
  * @example
  * const obj = { value: 42 };
  * const getValue = function(arg1, arg2, arg3) { return this.value === (arg1 + arg2 + arg3); };
- * console.log(safeApply(getValue, obj, [12, 21, 19])); // Outputs: true
+ * console.log(safeApply(getValue, obj, ...[12, 21, 19])); // Outputs: true
  */
 export const safeApply = <T extends ((...argArray: Parameters<T>) => ReturnType<T>)>(
     fn: T,
     thisArg: object | null,
-    argArray?: Parameters<T>
+    ...argArray: Parameters<T>
 ): ReturnType<T> =>
     // Use safeBind to bind the function and then immediately invoke it.
-    (safeBind(fn, thisArg, ...(argArray || []) as Parameters<T>) as Function)();
+    (safeBind(fn, thisArg, ...argArray) as Function)();

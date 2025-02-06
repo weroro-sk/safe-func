@@ -21,7 +21,7 @@ npm install safe-func
 
 ## Contents
 
-- [Why this library?](docs/PROBLEMS.md)
+- [Why this library?](docs/motivation)
 - [Synopsis](#synopsis)
 - [Testing](#testing)
 
@@ -155,7 +155,7 @@ console.log(safeApply(getValue, obj, 12, 21, 19)); // Outputs: true
 
 ### safeApply
 
-#### `safeApply(fn, thisArg | null, ?[arg1, arg2 ... argN] )`
+#### `safeApply(fn, thisArg | null, ...?[arg1, arg2 ... argN] )`
 
 > This is a type-safe variant of the native `Function.prototype.apply`.
 
@@ -166,7 +166,15 @@ If the application fails, it returns undefined.
 
 - **fn** [`Function`] - The function to execute.
 - **thisArg** [`object|null`] - The context to call the function with.
-- **argArray** [`any[]`] - _[optional]_ The array of arguments to pass to the function.
+- **args** [`...any[]`] - _[optional]_ The arguments to pass to the function.
+
+> Build-in
+> JS [`Function.prototype.apply()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
+> needs an array-like object, specifying the arguments with which func should be called
+>
+> In `safeApply` you need to
+> use [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+> e.g.: `safeApply(ctx, ...[arg1, arg2, arg3])`
 
 #### returns
 
@@ -187,7 +195,7 @@ const obj = {value: 42};
 const getValue = function (this: any, arg1: number, arg2: number, arg3: number) {
     return this.value === (arg1 + arg2 + arg3);
 };
-console.log(safeApply(getValue, obj, [12, 21, 19])); // Outputs: true
+console.log(safeApply(getValue, obj, ...[12, 21, 19])); // Outputs: true
 ```
 
 ---
