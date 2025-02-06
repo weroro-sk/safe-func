@@ -6,7 +6,9 @@ JavaScript.
 These functions ensure safe handling of context and arguments, providing fallback mechanisms for error handling and
 enhancing code reliability.
 
-### `safeExec(fn, ?<arg1, arg2 ... argN> )`
+### safeExec
+
+#### `safeExec(fn, ?<arg1, arg2 ... argN> )`
 
 > This is a type-safe variant of directly invoking a `function`.
 
@@ -31,7 +33,9 @@ console.log(safeExec(add, 1, 2)); // Outputs: 3
 
 ---
 
-### `safeBind(fn, thisArg, ?<arg1, arg2 ... argN> )`
+### safeBind
+
+#### `safeBind(fn, thisArg, ?<arg1, arg2 ... argN> )`
 
 > This is a type-safe variant of the native `Function.prototype.bind`.
 
@@ -60,7 +64,9 @@ console.log(boundGetBool()); // Outputs: true
 
 ---
 
-### `safeCall(fn, thisArg | null, ?<arg1, arg2 ... argN> )`
+### safeCall
+
+#### `safeCall(fn, thisArg | null, ?<arg1, arg2 ... argN> )`
 
 > This is a type-safe variant of the native `Function.prototype.call`.
 
@@ -87,7 +93,9 @@ console.log(safeApply(getValue, obj, 12, 21, 19)); // Outputs: true
 
 ---
 
-### `safeApply(fn, thisArg | null, ?[arg1, arg2 ... argN] )`
+### safeApply
+
+#### `safeApply(fn, thisArg | null, ?[arg1, arg2 ... argN] )`
 
 > This is a type-safe variant of the native `Function.prototype.apply`.
 
