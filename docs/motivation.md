@@ -312,16 +312,16 @@ import {safeApply} from "safe-func";
 const ctx = {value: 42};
 
 let fn = undefined;
-safeApply(fn, ctx, [1, 3]); // undefined
+safeApply(fn, ctx, ...[1, 3]); // undefined
 
 fn = null;
-safeApply(fn, ctx, [1, 3]); // undefined
+safeApply(fn, ctx, ...[1, 3]); // undefined
 
 fn = 1;
-safeApply(fn, ctx, [1, 3]); // undefined
+safeApply(fn, ctx, ...[1, 3]); // undefined
 
 fn = "string";
-safeApply(fn, ctx, [1, 3]); // undefined
+safeApply(fn, ctx, ...[1, 3]); // undefined
 ```
 
 ---
