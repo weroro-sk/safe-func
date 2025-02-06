@@ -169,8 +169,7 @@ If the application fails, it returns undefined.
 - **args** [`...any[]`] - _[optional]_ The arguments to pass to the function.
 
 > Build-in
->
-JS [`Function.prototype.apply()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
+> JavaScript [`Function.prototype.apply()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
 > needs an array-like object, specifying the arguments with which func should be called
 >
 > In `safeApply` you need to
