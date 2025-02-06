@@ -174,7 +174,7 @@ If the application fails, it returns undefined.
 >
 > In `safeApply` you need to
 > use [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
-> e.g.: `safeApply(ctx, ...[arg1, arg2, arg3])`
+> e.g.: `safeApply(fn, ctx, ...[arg1, arg2, arg3])`
 
 #### returns
 
