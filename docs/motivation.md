@@ -1,4 +1,4 @@
-# Why this library?
+# Why does this library exist? (motivation)
 
 - [Type inference](#type-inference)
     - `Function.prototype.bind`
