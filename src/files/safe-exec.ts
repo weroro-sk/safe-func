@@ -16,7 +16,7 @@ interface SafeExec {
      * safeExec(greet); // Outputs: "Hello"
      */
     <T extends ((...argArray: Parameters<T>) => ReturnType<T>)>
-    (fn: T): ReturnType<T>
+    (fn: T): ReturnType<T>;
 
     /**
      * This is a type-safe variant of directly invoking a `function`.
@@ -34,7 +34,7 @@ interface SafeExec {
      * console.log(safeExec(add, 1, 2)); // Outputs: 3
      */
     <T extends ((...argArray: Parameters<T>) => ReturnType<T>)>
-    (fn: T, ...args: Parameters<T>): ReturnType<T>
+    (fn: T, ...args: Parameters<T>): ReturnType<T>;
 }
 
 /**

@@ -18,7 +18,7 @@ interface SafeCall {
      * console.log(safeCall(getValue, obj)); // Outputs: 42
      */
     <T extends ((...argArray: Parameters<T>) => ReturnType<T>)>
-    (fn: T, thisArg: object | null): ReturnType<T>
+    (fn: T, thisArg: object | null): ReturnType<T>;
 
     /**
      * This is a type-safe variant of the native `Function.prototype.call`.
@@ -38,7 +38,7 @@ interface SafeCall {
      * console.log(safeApply(getValue, obj, 12, 21, 19)); // Outputs: true
      */
     <T extends ((...argArray: Parameters<T>) => ReturnType<T>)>
-    (fn: T, thisArg: object | null, ...args: Parameters<T>): ReturnType<T>
+    (fn: T, thisArg: object | null, ...args: Parameters<T>): ReturnType<T>;
 }
 
 /**
