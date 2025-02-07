@@ -21,7 +21,7 @@
     "::": ":",
     "prepack": "npm run build",
     "postpublish": "npm run del:build",
-    "pack:dry": "npm run build && npm pack --dry-run && npm run del:build || npm run del:build",
+    "pack:dry": "npm pack --dry-run && npm run del:build || npm run del:build",
     "posttest:single": "npm run del:test",
     "del:test": "rimraf lib-test",
     "del:build": "rimraf lib"
