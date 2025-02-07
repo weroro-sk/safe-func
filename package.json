@@ -41,7 +41,8 @@
     "JavaScript"
   ],
   "author": {
-    "name": "Dárius Bokor [weroro]"
+    "name": "Dárius Bokor [weroro]",
+    "email": "github@weroro.sk"
   },
   "repository": {
     "type": "git",
