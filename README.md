@@ -168,6 +168,7 @@ If the application fails, it returns undefined.
 - **thisArg** [`object|null`] - The context to call the function with.
 - **args** [`...any[]`] - _[optional]_ The arguments to pass to the function.
 
+> [!NOTE]
 > Build-in
 > JavaScript [`Function.prototype.apply()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
 > needs an array-like object, specifying the arguments with which func should be called

@@ -46,7 +46,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/weroro-sk/safe-func.git"
+    "url": "git+https://github.com/weroro-sk/safe-func.git"
   },
   "bugs": {
     "url": "https://github.com/weroro-sk/safe-func/issues"
