@@ -148,7 +148,7 @@ const obj = {value: 42};
 const getValue = function (this: any, arg1: number, arg2: number, arg3: number) {
     return this.value === (arg1 + arg2 + arg3);
 };
-console.log(safeApply(getValue, obj, 12, 21, 19)); // Outputs: true 
+console.log(safeCall(getValue, obj, 12, 21, 19)); // Outputs: true 
 ```
 
 ---
