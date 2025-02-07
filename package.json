@@ -13,6 +13,7 @@
   "scripts": {
     "build": "npm run del:build && tsc -p .tsconfig/tsconfig.dist.json || npm run del:build",
     "build:test": "npm run del:test && tsc -p .tsconfig/tsconfig.test.json || npm run del:test",
+    "build:pack": "npm run build && npm pack && npm run del:build || npm run del:build",
     ":": ":",
     "test": "npm run build:test && mocha && npm run del:test || npm run del:test",
     "test:min": "npm run build:test && mocha --reporter min && npm run del:test || npm run del:test",
